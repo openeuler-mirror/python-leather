@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.3.3
-Release:        1
+Release:        2
 Summary:        Python charting for 80% of humans
 
 License:        MIT
@@ -28,7 +28,7 @@ care if they’re perfect.\
 %package -n     python3-%{pypi_name}
 Summary:        %{summary}
 BuildRequires:  python3-devel
-BuildRequires:  python3-nose >= 1.1.2
+BuildRequires:  python3-nose2
 BuildRequires:  python3-sphinx >= 1.2.2
 BuildRequires:  python3-coverage >= 3.7.1
 BuildRequires:  python3-sphinx_rtd_theme >= 0.1.6
@@ -88,7 +88,7 @@ popd
 
 
 %check
-nosetests-%{python3_version} tests -v
+nose2-%{python3_version} tests -v
 
 
 %files -n python3-%{pypi_name}
@@ -104,5 +104,8 @@ nosetests-%{python3_version} tests -v
 
 
 %changelog
+* Tue May 17 2022 lvxiaoqian <xiaoqian@nj.iscas.ac.cn> - 0.3.3-2
+- replace nose with nose2
+
 * Mon Jun 28 2021 Cai Yuxin <caiyuxin@kylinos.cn> - 0.3.3-1
 - Inital package
